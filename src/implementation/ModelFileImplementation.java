@@ -6,16 +6,20 @@
 package implementation;
 
 import interfaces.Model;
+import java.util.ResourceBundle;
 
 /**
  *
  * @author 2dam
  */
-public class ModelFileImplementation implements Model{
+public class ModelFileImplementation implements Model {
+
+    static ResourceBundle config = ResourceBundle.getBundle("config");
+    private final String greeting = config.getString("Greeting");
 
     @Override
     public String getGreeting() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return greeting;
     }
-    
+
 }
