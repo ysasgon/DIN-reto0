@@ -5,10 +5,17 @@
  */
 package implementation;
 
+import interfaces.Model;
+
 /**
  *
  * @author 2dam
  */
-public class ModelDBImplemantation {
+public class ModelDBImplemantation implements Model{
+
+    @Override
+    public String getGreeting() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -9,6 +9,16 @@ package exceptions;
  *
  * @author 2dam
  */
-public class HelloWorldException {
+public class HelloWorldException extends Exception {
+
+    private static final long serialVersionUID = 1L;
+
+    public HelloWorldException(){
+        super();
+    }
+    
+    public HelloWorldException(String message){
+        super(message);
+    }
     
 }
