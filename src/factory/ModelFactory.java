@@ -17,17 +17,20 @@ import java.util.ResourceBundle;
  */
 public class ModelFactory {
 
-    static ResourceBundle config = ResourceBundle.getBundle("config");
-    private final String access = config.getString("AccessType");
-    public Model m;
+    // static ResourceBundle config = ResourceBundle.getBundle("config");
+    private final String access = ResourceBundle.getBundle("config").getString("AccessType");
 
+    
+    /***
+     * This method distinguish between File and DB access to get "Hello world!" message 
+     * @return Model
+     * @throws HelloWorldException
+     */
     public Model getModel() throws HelloWorldException {
-        if (!access.isEmpty()) {
-            if (access.equalsIgnoreCase("File")) {
-                return m = new ModelFileImplementation();
-            } else {
-                return m = new ModelDBImplemantation();
-            }
+        if (access.equalsIgnoreCase("File")) {
+            return new ModelFileImplementation();
+        } else if (access.equalsIgnoreCase("DB")) {
+            return new ModelDBImplemantation();
         } else {
             throw new HelloWorldException("not found");
         }

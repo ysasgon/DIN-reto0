@@ -17,6 +17,11 @@ public class ModelFileImplementation implements Model {
     static ResourceBundle config = ResourceBundle.getBundle("config");
     private final String greeting = config.getString("Greeting");
 
+    /***
+     * getGreeting method that gets the greeting message from the configuration file using ResourceBundle
+     * @return String greeting
+     */
+    
     @Override
     public String getGreeting() {
         return greeting;
