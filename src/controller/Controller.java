@@ -3,19 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package implementation;
+package controller;
 
+import interfaces.Model;
 import interfaces.View;
 
 /**
  *
- * @author Emil
+ * @author 
  */
-public class ViewTextImplementation implements View{
-
-    @Override
-    public void showGreeting(String greeting) {
-        System.out.println(greeting);
+public class Controller {
+    
+    public void run(Model m, View v){
+        
+        v.showGreeting(m.getGreeting());
     }
+
     
 }
