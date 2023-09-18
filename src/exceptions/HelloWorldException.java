@@ -7,7 +7,7 @@ package exceptions;
 
 /**
  *
- * @author 2dam
+ * @author Emil
  */
 public class HelloWorldException extends Exception {
 

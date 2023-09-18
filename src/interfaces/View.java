@@ -7,7 +7,7 @@ package interfaces;
 
 /**
  *
- * @author 2dam
+ * @author Emil
  */
 public interface View {
     public void showGreeting(String greeting);

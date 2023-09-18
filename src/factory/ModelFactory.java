@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author 2dam
+ * @author Fran
  */
 public class ModelFactory {
 

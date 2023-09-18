@@ -7,7 +7,7 @@ package interfaces;
 
 /**
  *
- * @author 2dam
+ * @author Fran
  */
 public interface Model {
     public String getGreeting();

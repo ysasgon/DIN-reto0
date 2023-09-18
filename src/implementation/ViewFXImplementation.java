@@ -9,7 +9,7 @@ import interfaces.View;
 
 /**
  *
- * @author 2dam
+ * @author Fran
  */
 public class ViewFXImplementation implements View{
 

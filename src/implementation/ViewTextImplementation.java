@@ -9,7 +9,7 @@ import interfaces.View;
 
 /**
  *
- * @author 2dam
+ * @author Emil
  */
 public class ViewTextImplementation implements View{
 

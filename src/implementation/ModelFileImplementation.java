@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author 2dam
+ * @author Emil
  */
 public class ModelFileImplementation implements Model {
 

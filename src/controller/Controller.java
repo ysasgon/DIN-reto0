@@ -10,7 +10,7 @@ import interfaces.View;
 
 /**
  *
- * @author 2dam
+ * @author 
  */
 public class Controller {
     
