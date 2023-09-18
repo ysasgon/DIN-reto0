@@ -5,10 +5,21 @@
  */
 package application;
 
+import controller.Controller;
+import factory.ModelFactory;
+import factory.ViewFactory;
+import interfaces.Model;
+import interfaces.View;
+
 /**
  *
  * @author 2dam
  */
 public class Application {
+
+    public Application(){
+     
+    }
+    
     
 }

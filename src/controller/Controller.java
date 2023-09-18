@@ -5,10 +5,19 @@
  */
 package controller;
 
+import interfaces.Model;
+import interfaces.View;
+
 /**
  *
  * @author 2dam
  */
 public class Controller {
+    
+    public void run(Model m, View v){
+        
+        v.showGreeting(m.getGreeting());
+    }
+
     
 }
