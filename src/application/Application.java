@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 2dam
+ * @author Emil and Fran
  */
 public class Application {
 
@@ -29,8 +29,7 @@ public class Application {
     }
 
     public static void run() throws HelloWorldException {
-        Controller controller = new Controller();
-        controller.run(new ModelFactory().getModel(), new ViewFactory().getView());
+        new Controller().run(new ModelFactory().getModel(), new ViewFactory().getView());
     }
 
 }
