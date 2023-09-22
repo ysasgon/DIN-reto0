@@ -5,6 +5,7 @@
  */
 package application;
 
+
 import controller.Controller;
 import exceptions.HelloWorldException;
 import factory.ModelFactory;
@@ -13,8 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Emil and Fran
+ * 
+ * @author 2dam
  */
 public class Application {
 
@@ -29,7 +30,8 @@ public class Application {
     }
 
     public static void run() throws HelloWorldException {
-        new Controller().run(new ModelFactory().getModel(), new ViewFactory().getView());
+        Controller controller = new Controller();
+        controller.run(new ModelFactory().getModel(), new ViewFactory().getView());
     }
 
 }

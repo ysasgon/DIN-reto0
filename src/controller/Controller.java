@@ -15,7 +15,6 @@ import interfaces.View;
 public class Controller {
     
     public void run(Model m, View v){
-        
         v.showGreeting(m.getGreeting());
     }
 

@@ -6,16 +6,69 @@
 package implementation;
 
 import interfaces.View;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Fran
  */
-public class ViewFXImplementation implements View{
+public class ViewFXImplementation extends javafx.application.Application implements View , Initializable{
 
+    /**
+     *
+     * @param greeting
+     */
     @Override
     public void showGreeting(String greeting) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+//            setGreeting(greeting);
+            init();
+        } catch (Exception ex) {
+            Logger.getLogger(ViewFXImplementation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
+    @FXML
+    private Label label;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }    
+
+    @FXML
+    public void setGreeting(String greeting) {
+        label.setText(greeting);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        
+        //Charge loader
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        
+        Parent root = (Parent) loader.load();
+        
+        ViewFXImplementation viewController = loader.getController();
+        
+        viewController.setGreeting("Hello wolrd");
+        
+        Scene scene = new Scene(root);
+        
+        primaryStage.setScene(scene);
+
+        primaryStage.showAndWait();
+
+    }
+
 }
