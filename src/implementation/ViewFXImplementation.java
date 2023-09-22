@@ -22,7 +22,9 @@ import javafx.stage.Stage;
  *
  * @author Fran
  */
-public class ViewFXImplementation extends javafx.application.Application implements View{
+public class ViewFXImplementation extends javafx.application.Application implements View {
+
+    private String greeting;
 
     /**
      *
@@ -31,26 +33,29 @@ public class ViewFXImplementation extends javafx.application.Application impleme
     @Override
     public void showGreeting(String greeting) {
         try {
+            this.greeting = greeting;
             launch(greeting);
         } catch (Exception ex) {
             Logger.getLogger(ViewFXImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    @FXML
+    private Label label;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
+
         //Charge loader
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-        
+
         Parent root = (Parent) loader.load();
-        
-        FXMLController viewController = loader.getController();
-        
-//        viewController.setGreeting(greeting);
-        
+
+        ViewFXImplementation viewController = (ViewFXImplementation) loader.getController();
+
+
         Scene scene = new Scene(root);
-        
+
         primaryStage.setScene(scene);
 
         primaryStage.showAndWait();
