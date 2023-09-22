@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Fran
  */
-public class ViewFXImplementation extends javafx.application.Application implements View , Initializable{
+public class ViewFXImplementation extends javafx.application.Application implements View{
 
     /**
      *
@@ -31,24 +31,10 @@ public class ViewFXImplementation extends javafx.application.Application impleme
     @Override
     public void showGreeting(String greeting) {
         try {
-//            setGreeting(greeting);
-            init();
+            launch(greeting);
         } catch (Exception ex) {
             Logger.getLogger(ViewFXImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    @FXML
-    private Label label;
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
-
-    @FXML
-    public void setGreeting(String greeting) {
-        label.setText(greeting);
     }
 
     @Override
@@ -59,9 +45,9 @@ public class ViewFXImplementation extends javafx.application.Application impleme
         
         Parent root = (Parent) loader.load();
         
-        ViewFXImplementation viewController = loader.getController();
+        FXMLController viewController = loader.getController();
         
-        viewController.setGreeting("Hello wolrd");
+//        viewController.setGreeting(greeting);
         
         Scene scene = new Scene(root);
         
