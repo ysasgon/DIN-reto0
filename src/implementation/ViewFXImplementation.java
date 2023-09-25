@@ -6,13 +6,10 @@
 package implementation;
 
 import interfaces.View;
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -24,7 +21,10 @@ import javafx.stage.Stage;
  */
 public class ViewFXImplementation extends javafx.application.Application implements View {
 
-    private String greeting;
+    private static String greeting;
+
+    @FXML
+    private Label label;
 
     /**
      *
@@ -34,14 +34,11 @@ public class ViewFXImplementation extends javafx.application.Application impleme
     public void showGreeting(String greeting) {
         try {
             this.greeting = greeting;
-            launch(greeting);
+            launch(this.greeting);
         } catch (Exception ex) {
             Logger.getLogger(ViewFXImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    @FXML
-    private Label label;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -53,12 +50,13 @@ public class ViewFXImplementation extends javafx.application.Application impleme
 
         ViewFXImplementation viewController = (ViewFXImplementation) loader.getController();
 
+        viewController.label.setText(greeting);
 
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
 
-        primaryStage.showAndWait();
+        primaryStage.show();
 
     }
 
