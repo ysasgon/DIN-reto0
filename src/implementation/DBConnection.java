@@ -5,46 +5,46 @@
  */
 package implementation;
 
-import interfaces.Model;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
- * @author Emil
+ * @author 2dam
  */
-public class ModelDBImplemantation extends DBConnection implements Model {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-    Connection con;
-    PreparedStatement stmt;
+public abstract class DBConnection {
 
-    final String getGreet = "SELECT greeting FROM greetings LIMIT 100";
+    private final ResourceBundle config = ResourceBundle.getBundle("config");
+    private final String url = config.getString("url");
+    ;
+    private final String user = config.getString("user");
+    ;
+    private final String pass = config.getString("pass");
+    ;
+    private Connection con = null;
+    private PreparedStatement stmt;
+    //CONSTRUCTOR
 
-    @Override
-    public String getGreeting() {
-        String greeting = null;
-        ResultSet rs = null;
-
+    public Connection openConnection() throws SQLException {
         try {
-            con = openConnection();
-            stmt = con.prepareStatement(getGreet);
-            rs = stmt.executeQuery();
-            if (rs.next()) {
-                greeting = rs.getString(1);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ModelDBImplemantation.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                closeConnection();
-            } catch (SQLException ex) {
-
-            }
+            con = DriverManager.getConnection(url, user, pass);
+        } catch (SQLException e) {
+            //System.out.println("Error al intentar abrir la BD");
+            //Gestión de la excepción
         }
-        return greeting;
+        return con;
+    }
+
+    public void closeConnection() throws SQLException {
+        if (stmt != null) {
+            stmt.close();
+        }
+        if (con != null) {
+            con.close();
+        }
     }
 }
+
