@@ -10,14 +10,21 @@ import interfaces.View;
 
 /**
  *
- * @author 
+ * @author Emil
  */
 public class Controller {
-    
-    public void run(Model m, View v){
-        
+
+    /**
+     * *
+     * run method: method that recieves a Model object and a View object and
+     * uses the showGreeting view method and getGreeting model method to obtain
+     * and show the greeting message to the user.
+     *
+     * @param m
+     * @param v
+     */
+    public void run(Model m, View v) {
         v.showGreeting(m.getGreeting());
     }
 
-    
 }

@@ -13,6 +13,10 @@ import interfaces.View;
  */
 public class ViewTextImplementation implements View{
 
+    /***
+     * This method shows the recieved greeting in the console.
+     * @param greeting 
+     */
     @Override
     public void showGreeting(String greeting) {
         System.out.println(greeting);
