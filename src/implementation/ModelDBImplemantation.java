@@ -24,6 +24,13 @@ public class ModelDBImplemantation extends DBConnection implements Model {
 
     final String getGreet = "SELECT greeting FROM greetings LIMIT 100";
 
+    /**
+     * *
+     * This method gets the greeting message from the database, using
+     * Connection, PreparedStatement and ResultSet objects.
+     *
+     * @return greeting
+     */
     @Override
     public String getGreeting() {
         String greeting = null;

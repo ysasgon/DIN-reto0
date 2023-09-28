@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 2dam
+ * @author Emil, Fran
  */
 public class Application {
 

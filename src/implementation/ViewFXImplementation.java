@@ -27,6 +27,8 @@ public class ViewFXImplementation extends javafx.application.Application impleme
     private Label label;
 
     /**
+     * This method obtains the greeting and calls the start method using
+     * launch()
      *
      * @param greeting
      */
@@ -40,6 +42,14 @@ public class ViewFXImplementation extends javafx.application.Application impleme
         }
     }
 
+    /**
+     * *
+     * This method creates and launches a JavaFX window (previously defined in
+     * the FXMLDocument) and the controller of it.
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 
